@@ -1,0 +1,43 @@
+{
+	"nav": {
+		"home": "Home",
+		"skills": "Skills",
+		"experience": "Experience",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"hero": {
+		"greeting": "Hi, I'm",
+		"name": "Felipe Nogueira",
+		"title": "Full Stack Developer",
+		"subtitle": "Specialized in creating exceptional digital experiences with React, Next.js, and Node.js. I transform ideas into elegant and scalable solutions.",
+		"cta": "Learn More",
+		"contact": "Get in Touch",
+		"yearsOfExperience": "Years of Experience",
+		"projectsCompleted": "Projects Completed",
+		"technologies": "Technologies"
+	},
+	"skills": {
+		"title": "Tech Stack",
+		"subtitle": "Technologies and tools I master",
+		"allTech": "All Technologies"
+	},
+	"experience": {
+		"title": "Professional Experience",
+		"subtitle": "My journey as a developer",
+		"current": "Current",
+		"highlights": "Highlights",
+		"clients": "Clients",
+		"technologies": "Technologies"
+	},
+	"projects": {
+		"title": "Projects",
+		"subtitle": "Some of my most recent works",
+		"featured": "Featured Projects",
+		"otherProjects": "Other Projects",
+		"viewCode": "View Code",
+		"viewDemo": "View Demo",
+		"viewAllGithub": "View All on GitHub",
+		"noDescription": "No description"
+	}
+}
