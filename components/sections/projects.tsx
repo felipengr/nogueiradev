@@ -57,7 +57,7 @@ export function Projects({ githubRepos = [] }: ProjectsProps) {
 									}}
 								>
 									{/* Gradient overlay on hover */}
-									<div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+									<div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
 									<div className="relative space-y-4">
 										{/* Header */}
