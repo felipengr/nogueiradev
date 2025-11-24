@@ -39,5 +39,36 @@
 		"viewDemo": "Ver Demo",
 		"viewAllGithub": "Ver Todos no GitHub",
 		"noDescription": "Sem descrição"
+	},
+	"footer": {
+		"tagline": "Full Stack Developer especializado em criar experiências digitais excepcionais.",
+		"navigation": "Navegação",
+		"social": "Redes Sociais",
+		"contact": "Contato",
+		"rights": "Todos os direitos reservados.",
+		"nav": {
+			"home": "Início",
+			"skills": "Habilidades",
+			"experience": "Experiência",
+			"projects": "Projetos",
+			"contact": "Contato"
+		}
+	},
+	"contact": {
+		"title": "Entre em Contato",
+		"subtitle": "Vamos construir algo incrível juntos",
+		"getInTouch": "Fale Comigo",
+		"description": "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte da sua visão.",
+		"name": "Nome",
+		"namePlaceholder": "Seu nome",
+		"email": "E-mail",
+		"emailPlaceholder": "seu@email.com",
+		"message": "Mensagem",
+		"messagePlaceholder": "Conte-me sobre seu projeto...",
+		"send": "Enviar Mensagem",
+		"sending": "Enviando...",
+		"success": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+		"error": "Erro ao enviar mensagem. Por favor, tente novamente.",
+		"recaptchaRequired": "Por favor, complete a verificação reCAPTCHA."
 	}
 }

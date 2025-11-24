@@ -39,5 +39,36 @@
 		"viewDemo": "View Demo",
 		"viewAllGithub": "View All on GitHub",
 		"noDescription": "No description"
+	},
+	"footer": {
+		"tagline": "Full Stack Developer specialized in creating exceptional digital experiences.",
+		"navigation": "Navigation",
+		"social": "Social Media",
+		"contact": "Contact",
+		"rights": "All rights reserved.",
+		"nav": {
+			"home": "Home",
+			"skills": "Skills",
+			"experience": "Experience",
+			"projects": "Projects",
+			"contact": "Contact"
+		}
+	},
+	"contact": {
+		"title": "Get in Touch",
+		"subtitle": "Let's build something amazing together",
+		"getInTouch": "Contact Me",
+		"description": "I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.",
+		"name": "Name",
+		"namePlaceholder": "Your name",
+		"email": "Email",
+		"emailPlaceholder": "your@email.com",
+		"message": "Message",
+		"messagePlaceholder": "Tell me about your project...",
+		"send": "Send Message",
+		"sending": "Sending...",
+		"success": "Message sent successfully! I'll get back to you soon.",
+		"error": "Error sending message. Please try again.",
+		"recaptchaRequired": "Please complete the reCAPTCHA verification."
 	}
 }
