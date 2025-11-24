@@ -4,9 +4,11 @@ import { motion } from "framer-motion"
 import { ArrowUp, Github, Linkedin, Mail, Phone } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
+	const [year, setYear] = useState(2025)
 	const t = useTranslations("footer")
 
 	const scrollToTop = () => {
@@ -45,6 +47,10 @@ export function Footer() {
 			element.scrollIntoView({ behavior: "smooth" })
 		}
 	}
+
+	useEffect(() => {
+		setYear(new Date().getFullYear())
+	}, [])
 
 	return (
 		<footer className="border-t bg-card/50 backdrop-blur-sm">
@@ -128,7 +134,7 @@ export function Footer() {
 				{/* Bottom Bar */}
 				<div className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4">
 					<p className="text-sm text-muted-foreground">
-						© {new Date().getFullYear()} Felipe Nogueira. {t("rights")}
+						© {year} Felipe Nogueira. {t("rights")}
 					</p>
 
 					{/* Back to Top Button */}

@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { gtmEvents } from "@/lib/gtm"
 
 declare global {
 	interface Window {
@@ -84,11 +85,13 @@ export function Contact() {
 					message: result.message,
 				})
 				form.reset()
+				gtmEvents.contactFormSubmit("success")
 			} else {
 				setSubmitStatus({
 					type: "error",
 					message: result.message,
 				})
+				gtmEvents.contactFormSubmit("error")
 			}
 		} catch (error) {
 			console.error("Error:", error)

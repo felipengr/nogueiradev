@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
+import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/gtm"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import "../globals.css"
@@ -47,7 +48,7 @@ export async function generateMetadata({
 			address: false,
 			telephone: false,
 		},
-		metadataBase: new URL("https://felipenogueira.dev"), // MUDE PARA SEU DOMÍNIO
+		metadataBase: new URL("https://www.nogueiradev.com.br"),
 		alternates: {
 			canonical: "/",
 			languages: {
@@ -58,7 +59,7 @@ export async function generateMetadata({
 		openGraph: {
 			type: "website",
 			locale: locale === "en" ? "en_US" : "pt_BR",
-			url: "https://felipenogueira.dev", // MUDE PARA SEU DOMÍNIO
+			url: "https://www.nogueiradev.com.br",
 			title: "Felipe Nogueira | Full Stack Developer",
 			description: isEnglish
 				? "Full Stack Developer specialized in React, Next.js, Node.js, and VTEX IO. Building exceptional digital experiences."
@@ -111,7 +112,11 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale} suppressHydrationWarning>
+			<head>
+				<GoogleTagManager />
+			</head>
 			<body className={cn(inter.className, "antialiased")}>
+				<GoogleTagManagerNoScript />
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
