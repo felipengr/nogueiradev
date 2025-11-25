@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { gtmEvents } from "@/lib/gtm"
 
 export function Footer() {
 	const [year, setYear] = useState(2025)
@@ -97,6 +98,15 @@ export function Footer() {
 									href={social.href}
 									target="_blank"
 									rel="noopener noreferrer"
+									onClick={() => {
+										if (social.label === "GitHub") {
+											gtmEvents.socialClick("github", "footer", social.href)
+										} else if (social.label === "LinkedIn") {
+											gtmEvents.socialClick("linkedin", "footer", social.href)
+										} else if (social.label === "Email") {
+											gtmEvents.socialClick("email", "footer", social.href)
+										}
+									}}
 									className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
 								>
 									<social.icon className="h-4 w-4" />
@@ -113,6 +123,9 @@ export function Footer() {
 							<p>São Paulo, Brasil</p>
 							<Link
 								href="mailto:felipenogueira.94@gmail.com"
+								onClick={() =>
+									gtmEvents.socialClick("email", "footer", "mailto:felipenogueira.94@gmail.com")
+								}
 								className="flex items-center gap-2 hover:text-primary transition-colors"
 							>
 								<Mail className="h-3 w-3" />
@@ -122,6 +135,7 @@ export function Footer() {
 								href="https://wa.me/5511974084935"
 								target="_blank"
 								rel="noopener noreferrer"
+								onClick={() => gtmEvents.whatsappClick("footer")}
 								className="flex items-center gap-2 hover:text-primary transition-colors"
 							>
 								<Phone className="h-3 w-3" />

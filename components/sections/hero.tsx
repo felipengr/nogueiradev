@@ -5,6 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
+import { gtmEvents } from "@/lib/gtm"
 
 interface HeroProps {
 	githubStats?: {
@@ -108,7 +109,12 @@ export function Hero({ githubStats }: HeroProps) {
 								className="bg-card border-2 cursor-pointer hover:bg-muted"
 								asChild
 							>
-								<Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+								<Link
+									href={whatsappLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={() => gtmEvents.whatsappClick("hero")}
+								>
 									{t("contact")}
 								</Link>
 							</Button>
@@ -121,7 +127,14 @@ export function Hero({ githubStats }: HeroProps) {
 							className="flex gap-4"
 						>
 							<motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.95 }}>
-								<Link href="https://github.com/felipengr" target="_blank" rel="noopener noreferrer">
+								<Link
+									href="https://github.com/felipengr"
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={() =>
+										gtmEvents.socialClick("github", "hero", "https://github.com/felipengr")
+									}
+								>
 									<Button
 										size="icon"
 										variant="ghost"
@@ -137,6 +150,13 @@ export function Hero({ githubStats }: HeroProps) {
 									href="https://www.linkedin.com/in/nogueirafelipe94/"
 									target="_blank"
 									rel="noopener noreferrer"
+									onClick={() =>
+										gtmEvents.socialClick(
+											"linkedin",
+											"hero",
+											"https://www.linkedin.com/in/nogueirafelipe94/"
+										)
+									}
 								>
 									<Button
 										size="icon"
@@ -149,7 +169,12 @@ export function Hero({ githubStats }: HeroProps) {
 							</motion.div>
 
 							<motion.div whileHover={{ scale: 1.1, rotate: 5 }} whileTap={{ scale: 0.95 }}>
-								<Link href="mailto:felipenogueira.94@gmail.com">
+								<Link
+									href="mailto:felipenogueira.94@gmail.com"
+									onClick={() =>
+										gtmEvents.socialClick("email", "hero", "mailto:felipenogueira.94@gmail.com")
+									}
+								>
 									<Button
 										size="icon"
 										variant="ghost"

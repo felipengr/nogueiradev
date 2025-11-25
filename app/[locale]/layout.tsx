@@ -112,7 +112,7 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale} suppressHydrationWarning>
-			<body className={cn(inter.className, "antialiased")}>
+			<body className={cn(inter.className, "antialiased")} suppressHydrationWarning>
 				<GoogleTagManager />
 				<GoogleTagManagerNoScript />
 				<ThemeProvider

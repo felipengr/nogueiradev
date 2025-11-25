@@ -183,6 +183,17 @@ export function Contact() {
 											href={info.href}
 											target={info.href.startsWith("http") ? "_blank" : undefined}
 											rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
+											onClick={() => {
+												if (info.label === "WhatsApp") {
+													gtmEvents.whatsappClick("contact_section")
+												} else if (info.label === "GitHub") {
+													gtmEvents.socialClick("github", "contact_section", info.href)
+												} else if (info.label === "LinkedIn") {
+													gtmEvents.socialClick("linkedin", "contact_section", info.href)
+												} else if (info.label === "Email") {
+													gtmEvents.socialClick("email", "contact_section", info.href)
+												}
+											}}
 											className="flex items-center gap-4 p-4 rounded-lg border-2 bg-card hover:bg-muted transition-colors group"
 											style={{
 												backgroundColor: "var(--color-card)",

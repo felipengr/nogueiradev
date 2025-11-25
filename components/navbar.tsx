@@ -3,6 +3,7 @@
 import { motion, useScroll } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { useTheme } from "next-themes"
 import { useEffect, useMemo, useState } from "react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeSwitcher } from "@/components/theme-switcher"
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button"
 
 export function Navbar() {
 	const t = useTranslations("nav")
+	const { theme } = useTheme()
 	const [isOpen, setIsOpen] = useState(false)
 	const [activeSection, setActiveSection] = useState("home")
 	const [scrolled, setScrolled] = useState(false)
@@ -61,6 +63,10 @@ export function Navbar() {
 		}
 		setIsOpen(false)
 	}
+
+	// Define background baseado no tema
+	const isDark = theme === "dark"
+	const mobileMenuBg = isDark ? "#0a0a0a" : "#fafafa"
 
 	return (
 		<>
@@ -138,7 +144,8 @@ export function Navbar() {
 					animate={{ opacity: 1, x: 0 }}
 					exit={{ opacity: 0, x: "100%" }}
 					transition={{ type: "spring", stiffness: 300, damping: 30 }}
-					className="fixed inset-0 z-40 bg-background md:hidden"
+					className="fixed inset-0 z-40 md:hidden"
+					style={{ backgroundColor: mobileMenuBg }}
 				>
 					<div className="flex flex-col items-center justify-center h-full gap-8">
 						{navItems.map((item, index) => (

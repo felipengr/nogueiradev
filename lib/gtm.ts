@@ -18,7 +18,26 @@ export const gtmEvents = {
 	contactFormSubmit: (status: "success" | "error") => {
 		pushToDataLayer({
 			event: "contact_form_submit",
-			status,
+			form_status: status,
+		})
+	},
+
+	// Clique no WhatsApp
+	whatsappClick: (location: string) => {
+		pushToDataLayer({
+			event: "whatsapp_click",
+			click_location: location, // "hero", "contact_section", "footer"
+			link_url: "https://wa.me/5511974084935",
+		})
+	},
+
+	// Cliques em redes sociais
+	socialClick: (platform: string, location: string, url: string) => {
+		pushToDataLayer({
+			event: "social_click",
+			social_platform: platform, // "github", "linkedin", "email"
+			click_location: location, // "hero", "contact_section", "footer"
+			link_url: url,
 		})
 	},
 
@@ -31,20 +50,12 @@ export const gtmEvents = {
 		})
 	},
 
-	// Cliques em links sociais
-	socialClick: (platform: string, url: string) => {
-		pushToDataLayer({
-			event: "social_click",
-			platform,
-			url,
-		})
-	},
-
 	// Visualização de projeto
-	projectView: (projectName: string) => {
+	projectClick: (projectName: string, projectUrl: string) => {
 		pushToDataLayer({
-			event: "project_view",
+			event: "project_click",
 			project_name: projectName,
+			project_url: projectUrl,
 		})
 	},
 }
