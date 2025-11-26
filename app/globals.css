@@ -148,3 +148,11 @@ section {
 	background-color: #1a1a1a !important;
 	border-color: #262626 !important;
 }
+
+section .container {
+	max-width: 1152px !important;
+}
+
+section#home .container {
+	max-width: 1152px !important;
+}

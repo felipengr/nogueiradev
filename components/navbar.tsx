@@ -76,7 +76,7 @@ export function Navbar() {
 					scrolled ? "bg-background/95 shadow-lg" : "bg-transparent border-transparent"
 				}`}
 			>
-				<div className="container mx-auto px-4">
+				<div className="w-full max-w-6xl mx-auto px-4">
 					<div className="flex h-16 items-center justify-between">
 						{/* Logo */}
 						<motion.button
