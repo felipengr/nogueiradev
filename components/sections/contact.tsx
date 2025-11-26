@@ -31,7 +31,39 @@ export function Contact() {
 		message: string
 	}>({ type: null, message: "" })
 	const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false)
+	const [shouldLoadRecaptcha, setShouldLoadRecaptcha] = useState(false) // NOVO!
 	const formRef = useRef<HTMLFormElement>(null)
+
+	// NOVO: Carrega reCAPTCHA apenas quando usuário interagir
+	useEffect(() => {
+		const loadOnInteraction = () => {
+			setShouldLoadRecaptcha(true)
+		}
+
+		// Carrega quando scrollar até a seção
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries[0].isIntersecting) {
+					loadOnInteraction()
+					observer.disconnect()
+				}
+			},
+			{ threshold: 0.1 }
+		)
+
+		const section = document.getElementById("contact")
+		if (section) {
+			observer.observe(section)
+		}
+
+		// Fallback: carrega após 3 segundos
+		const timeout = setTimeout(loadOnInteraction, 3000)
+
+		return () => {
+			observer.disconnect()
+			clearTimeout(timeout)
+		}
+	}, [])
 
 	// Reset status após 5 segundos
 	useEffect(() => {
@@ -133,15 +165,18 @@ export function Contact() {
 
 	return (
 		<>
-			{/* reCAPTCHA v3 Script */}
-			<Script
-				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-				onLoad={() => {
-					window.grecaptcha.ready(() => {
-						setIsRecaptchaLoaded(true)
-					})
-				}}
-			/>
+			{/* reCAPTCHA v3 Script - LAZY LOAD */}
+			{shouldLoadRecaptcha && (
+				<Script
+					src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+					strategy="lazyOnload"
+					onLoad={() => {
+						window.grecaptcha.ready(() => {
+							setIsRecaptchaLoaded(true)
+						})
+					}}
+				/>
+			)}
 
 			<section id="contact" className="py-20 px-4 bg-muted/30">
 				<div className="container mx-auto max-w-7xl">

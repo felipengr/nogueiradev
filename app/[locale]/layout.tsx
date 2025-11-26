@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import "../globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export async function generateMetadata({
 	params,
@@ -112,6 +112,10 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale} suppressHydrationWarning>
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+			</head>
 			<body className={cn(inter.className, "antialiased")} suppressHydrationWarning>
 				<GoogleTagManager />
 				<GoogleTagManagerNoScript />
