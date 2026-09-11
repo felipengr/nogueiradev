@@ -1,11 +1,12 @@
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
+import { About } from "@/components/sections/about"
 import { Brands } from "@/components/sections/brands"
 import { Contact } from "@/components/sections/contact"
-import { Experience } from "@/components/sections/experience"
 import { Hero } from "@/components/sections/hero"
 import { Projects } from "@/components/sections/projects"
-import { Skills } from "@/components/sections/skills"
+import { Services } from "@/components/sections/services"
+import { Testimonials } from "@/components/sections/testimonials"
 import { getGitHubRepos, getGitHubStats } from "@/lib/github"
 
 export default async function Home() {
@@ -19,9 +20,10 @@ export default async function Home() {
 			<Navbar />
 			<Hero githubStats={githubStats || undefined} />
 			<Brands />
-			<Skills />
-			<Experience />
+			<Services />
+			<About />
 			<Projects githubRepos={githubRepos} />
+			<Testimonials />
 			<Contact />
 			<Footer />
 		</>

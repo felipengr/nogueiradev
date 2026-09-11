@@ -5,6 +5,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
+import { brandsData } from "@/lib/data/brands"
 import { gtmEvents } from "@/lib/gtm"
 
 interface HeroProps {
@@ -24,14 +25,14 @@ export function Hero({ githubStats }: HeroProps) {
 			value: githubStats ? `${githubStats.publicRepos}+` : "50+",
 		},
 		{
-			label: "Commits",
-			value: githubStats ? `${githubStats.totalCommits}+` : "1000+",
+			label: t("brandsServed"),
+			value: `${brandsData.length}+`,
 		},
 	]
 
 	// WhatsApp link com mensagem
 	const whatsappMessage = encodeURIComponent(
-		"Olá! Vim através do seu site e gostaria de conversar sobre um projeto."
+		"Olá! Vim através do seu site e gostaria de solicitar um orçamento."
 	)
 	const whatsappLink = `https://wa.me/5511974084935?text=${whatsappMessage}`
 
@@ -48,15 +49,16 @@ export function Hero({ githubStats }: HeroProps) {
 						transition={{ duration: 0.5 }}
 						className="flex flex-col justify-center space-y-8"
 					>
-						<div className="space-y-2">
-							<motion.p
+						<div className="space-y-4">
+							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.1 }}
-								className="text-lg font-medium text-muted-foreground"
+								className="glass inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium text-muted-foreground"
 							>
-								{t("greeting")}
-							</motion.p>
+								<span className="h-2 w-2 rounded-full bg-secondary" />
+								{t("eyebrow")}
+							</motion.div>
 
 							<motion.h1
 								initial={{ opacity: 0, x: -20 }}
@@ -64,18 +66,8 @@ export function Hero({ githubStats }: HeroProps) {
 								transition={{ duration: 0.5, delay: 0.2 }}
 								className="text-display text-gradient font-bold"
 							>
-								{t("name")}
+								{t("headline")}
 							</motion.h1>
-
-							<motion.div
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.5, delay: 0.3 }}
-								className="flex items-center gap-3"
-							>
-								<div className="h-1 w-12 rounded-full bg-linear-to-r from-primary to-secondary" />
-								<h2 className="text-2xl font-semibold text-primary sm:text-3xl">{t("title")}</h2>
-							</motion.div>
 						</div>
 
 						<motion.p
@@ -96,17 +88,6 @@ export function Hero({ githubStats }: HeroProps) {
 							<Button
 								size="lg"
 								className="group rounded-full bg-primary px-6 text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 cursor-pointer"
-								onClick={() => {
-									document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })
-								}}
-							>
-								{t("cta")}
-								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-							</Button>
-							<Button
-								size="lg"
-								variant="outline"
-								className="glass rounded-full border-2 cursor-pointer hover:bg-muted"
 								asChild
 							>
 								<Link
@@ -115,8 +96,19 @@ export function Hero({ githubStats }: HeroProps) {
 									rel="noopener noreferrer"
 									onClick={() => gtmEvents.whatsappClick("hero")}
 								>
-									{t("contact")}
+									{t("ctaPrimary")}
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Link>
+							</Button>
+							<Button
+								size="lg"
+								variant="outline"
+								className="glass rounded-full border-2 cursor-pointer hover:bg-muted"
+								onClick={() => {
+									document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
+								}}
+							>
+								{t("ctaSecondary")}
 							</Button>
 						</motion.div>
 

@@ -8,6 +8,7 @@ import { useEffect, useMemo, useState } from "react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Button } from "@/components/ui/button"
+import { testimonialsData } from "@/lib/data/testimonials"
 
 export function Navbar() {
 	const t = useTranslations("nav")
@@ -16,17 +17,20 @@ export function Navbar() {
 	const [activeSection, setActiveSection] = useState("home")
 	const [scrolled, setScrolled] = useState(false)
 	const { scrollY } = useScroll()
+	const hasTestimonials = testimonialsData.some((item) => item.published)
 
 	// Usando useMemo para evitar recriação
 	const navItems = useMemo(
-		() => [
-			{ id: "home", label: t("home") },
-			{ id: "skills", label: t("skills") },
-			{ id: "experience", label: t("experience") },
-			{ id: "projects", label: t("projects") },
-			{ id: "contact", label: t("contact") },
-		],
-		[t]
+		() =>
+			[
+				{ id: "home", label: t("home") },
+				{ id: "services", label: t("services") },
+				{ id: "portfolio", label: t("portfolio") },
+				{ id: "about", label: t("about") },
+				hasTestimonials ? { id: "testimonials", label: t("testimonials") } : null,
+				{ id: "contact", label: t("contact") },
+			].filter((item): item is { id: string; label: string } => item !== null),
+		[t, hasTestimonials]
 	)
 
 	// Detecta scroll para mudar background

@@ -6,11 +6,13 @@ import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { testimonialsData } from "@/lib/data/testimonials"
 import { gtmEvents } from "@/lib/gtm"
 
 export function Footer() {
 	const [year, setYear] = useState(2025)
 	const t = useTranslations("footer")
+	const hasTestimonials = testimonialsData.some((item) => item.published)
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: "smooth" })
@@ -18,9 +20,10 @@ export function Footer() {
 
 	const navItems = [
 		{ id: "home", label: t("nav.home") },
-		{ id: "skills", label: t("nav.skills") },
-		{ id: "experience", label: t("nav.experience") },
-		{ id: "projects", label: t("nav.projects") },
+		{ id: "services", label: t("nav.services") },
+		{ id: "portfolio", label: t("nav.portfolio") },
+		{ id: "about", label: t("nav.about") },
+		...(hasTestimonials ? [{ id: "testimonials", label: t("nav.testimonials") }] : []),
 		{ id: "contact", label: t("nav.contact") },
 	]
 

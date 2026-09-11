@@ -25,7 +25,7 @@ export function Projects({ githubRepos = [] }: ProjectsProps) {
 	const otherRepos = githubRepos.filter((repo) => !featuredIds.includes(repo.name.toLowerCase()))
 
 	return (
-		<section id="projects" className="py-20 px-4">
+		<section id="portfolio" className="py-20 px-4">
 			<div className="container mx-auto max-w-6xl">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

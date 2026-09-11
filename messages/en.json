@@ -1,25 +1,35 @@
 {
 	"nav": {
 		"home": "Home",
-		"skills": "Skills",
-		"experience": "Experience",
-		"projects": "Projects",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"about": "About",
+		"testimonials": "Testimonials",
 		"contact": "Contact"
 	},
 	"hero": {
-		"greeting": "Hi, I'm",
-		"name": "Felipe Nogueira",
-		"title": "Full Stack Developer",
-		"subtitle": "Specialized in creating exceptional digital experiences with React, Next.js, and Node.js. I transform ideas into elegant and scalable solutions.",
-		"cta": "Learn More",
-		"contact": "Get in Touch",
+		"eyebrow": "Professional Web Development",
+		"headline": "Websites and online stores that make your brand sell more.",
+		"subtitle": "Full stack developer specialized in performance and e-commerce, with projects delivered for brands like Reserva, Cartier, and Arezzo. I turn your idea into a fast, beautiful site that's ready to convert.",
+		"ctaPrimary": "Request a Quote",
+		"ctaSecondary": "View Portfolio",
 		"yearsOfExperience": "Years of Experience",
 		"projectsCompleted": "Projects Completed",
-		"technologies": "Technologies"
+		"brandsServed": "Brands Served"
 	},
 	"brands": {
 		"title": "Brands I've worked with",
 		"subtitle": "Projects delivered for major retail and luxury brands"
+	},
+	"services": {
+		"title": "Services",
+		"subtitle": "Complete digital solutions to strengthen your online presence and win more clients"
+	},
+	"about": {
+		"title": "About Me",
+		"bio": "I've been a full stack developer for over 6 years, specialized in building fast, secure websites and online stores that are ready to sell. I've delivered projects for brands like Reserva, Cartier, Arezzo, and Chilli Beans, always focused on performance, design, and results. If you want a professional site that builds credibility and turns visitors into customers, I can help you build it from the ground up.",
+		"companiesLabel": "Companies I've worked with",
+		"techLabel": "Technologies I master"
 	},
 	"skills": {
 		"title": "Tech Stack",
@@ -35,7 +45,7 @@
 		"technologies": "Technologies"
 	},
 	"projects": {
-		"title": "Projects",
+		"title": "Portfolio",
 		"subtitle": "Some of my most recent works",
 		"featured": "Featured Projects",
 		"otherProjects": "Other Projects",
@@ -44,17 +54,22 @@
 		"viewAllGithub": "View All on GitHub",
 		"noDescription": "No description"
 	},
+	"testimonials": {
+		"title": "Testimonials",
+		"subtitle": "What clients who've worked with me have to say"
+	},
 	"footer": {
-		"tagline": "Full Stack Developer specialized in creating exceptional digital experiences.",
+		"tagline": "Websites and online stores that make your brand sell more.",
 		"navigation": "Navigation",
 		"social": "Social Media",
 		"contact": "Contact",
 		"rights": "All rights reserved.",
 		"nav": {
 			"home": "Home",
-			"skills": "Skills",
-			"experience": "Experience",
-			"projects": "Projects",
+			"services": "Services",
+			"portfolio": "Portfolio",
+			"about": "About",
+			"testimonials": "Testimonials",
 			"contact": "Contact"
 		}
 	},
