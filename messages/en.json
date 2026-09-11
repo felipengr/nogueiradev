@@ -17,6 +17,10 @@
 		"projectsCompleted": "Projects Completed",
 		"technologies": "Technologies"
 	},
+	"brands": {
+		"title": "Brands I've worked with",
+		"subtitle": "Projects delivered for major retail and luxury brands"
+	},
 	"skills": {
 		"title": "Tech Stack",
 		"subtitle": "Technologies and tools I master",

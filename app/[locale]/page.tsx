@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
+import { Brands } from "@/components/sections/brands"
 import { Contact } from "@/components/sections/contact"
 import { Experience } from "@/components/sections/experience"
 import { Hero } from "@/components/sections/hero"
@@ -17,6 +18,7 @@ export default async function Home() {
 		<>
 			<Navbar />
 			<Hero githubStats={githubStats || undefined} />
+			<Brands />
 			<Skills />
 			<Experience />
 			<Projects githubRepos={githubRepos} />

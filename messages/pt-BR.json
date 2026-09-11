@@ -17,6 +17,10 @@
 		"projectsCompleted": "Projetos Concluídos",
 		"technologies": "Tecnologias"
 	},
+	"brands": {
+		"title": "Marcas com as quais já trabalhei",
+		"subtitle": "Projetos entregues para grandes marcas do varejo e do luxo"
+	},
 	"skills": {
 		"title": "Tech Stack",
 		"subtitle": "Tecnologias e ferramentas que domino",
