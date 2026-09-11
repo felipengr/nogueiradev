@@ -13,9 +13,11 @@ export function Brands() {
 		return null
 	}
 
+	const track = [...brands, ...brands]
+
 	return (
-		<section id="brands" className="section-glow section-glow-violet py-20 px-4">
-			<div className="container mx-auto max-w-6xl">
+		<section id="brands" className="section-glow section-glow-violet py-20">
+			<div className="container mx-auto max-w-6xl px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -26,32 +28,32 @@ export function Brands() {
 					<h2 className="text-display-sm font-bold mb-4">{t("title")}</h2>
 					<p className="text-lg text-muted-foreground">{t("subtitle")}</p>
 				</motion.div>
+			</div>
 
-				<div className="flex flex-wrap justify-center gap-4">
-					{brands.map((brand, index) => (
-						<motion.div
-							key={brand.name}
-							initial={{ opacity: 0, scale: 0.9 }}
-							whileInView={{ opacity: 1, scale: 1 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.4, delay: index * 0.05 }}
-							className="glass group flex h-28 w-[calc(50%-0.5rem)] items-center justify-center rounded-2xl border p-4 sm:w-[calc(33.333%-0.75rem)] md:w-[calc(25%-0.75rem)]"
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.5, delay: 0.1 }}
+				className="marquee-fade overflow-hidden rounded-3xl border bg-white py-10 shadow-xl mx-4 md:mx-auto md:max-w-6xl"
+			>
+				<div className="marquee-track flex w-max items-center gap-20 px-10">
+					{track.map((brand, index) => (
+						<div
+							key={`${brand.name}-${index}`}
+							className="relative h-14 w-40 shrink-0 transition-transform duration-300 hover:scale-110 sm:h-16 sm:w-48"
 						>
-							<div className="relative flex h-full w-full items-center justify-center rounded-xl bg-white p-4">
-								<div className="relative h-10 w-full">
-									<Image
-										src={brand.logo}
-										alt={brand.name}
-										fill
-										sizes="160px"
-										className="object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-									/>
-								</div>
-							</div>
-						</motion.div>
+							<Image
+								src={brand.logo}
+								alt={brand.name}
+								fill
+								sizes="200px"
+								className="object-contain"
+							/>
+						</div>
 					))}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	)
 }
