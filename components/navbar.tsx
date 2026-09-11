@@ -106,7 +106,7 @@ export function Navbar() {
 									{activeSection === item.id && (
 										<motion.div
 											layoutId="activeSection"
-											className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+											className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-primary to-secondary"
 											transition={{
 												type: "spring",
 												stiffness: 380,
