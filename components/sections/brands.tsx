@@ -37,18 +37,18 @@ export function Brands() {
 				transition={{ duration: 0.5, delay: 0.1 }}
 				className="marquee-fade overflow-hidden rounded-3xl border bg-white py-10 shadow-xl mx-4 md:mx-auto md:max-w-6xl"
 			>
-				<div className="marquee-track flex w-max items-center gap-20 px-10">
+				<div className="marquee-track flex w-max items-center gap-16 px-10">
 					{track.map((brand, index) => (
 						<div
 							key={`${brand.name}-${index}`}
-							className="relative h-14 w-40 shrink-0 transition-transform duration-300 hover:scale-110 sm:h-16 sm:w-48"
+							className="flex h-10 shrink-0 items-center transition-transform duration-300 hover:scale-110 sm:h-12"
 						>
 							<Image
 								src={brand.logo}
 								alt={brand.name}
-								fill
-								sizes="200px"
-								className="object-contain"
+								width={brand.width}
+								height={brand.height}
+								className="h-full w-auto"
 							/>
 						</div>
 					))}
