@@ -1,0 +1,2 @@
+npm version patch --no-git-tag-version --allow-same-version > /dev/null
+git add package.json package-lock.json
