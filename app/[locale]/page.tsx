@@ -7,13 +7,10 @@ import { Hero } from "@/components/sections/hero"
 import { Projects } from "@/components/sections/projects"
 import { Services } from "@/components/sections/services"
 import { Testimonials } from "@/components/sections/testimonials"
-import { getGitHubRepos, getGitHubStats } from "@/lib/github"
+import { getGitHubStats } from "@/lib/github"
 
 export default async function Home() {
-	const [githubStats, githubRepos] = await Promise.all([
-		getGitHubStats("felipengr"),
-		getGitHubRepos("felipengr", 6),
-	])
+	const githubStats = await getGitHubStats("felipengr")
 
 	return (
 		<>
@@ -21,8 +18,8 @@ export default async function Home() {
 			<Hero githubStats={githubStats || undefined} />
 			<Brands />
 			<Services />
+			<Projects />
 			<About />
-			<Projects githubRepos={githubRepos} />
 			<Testimonials />
 			<Contact />
 			<Footer />

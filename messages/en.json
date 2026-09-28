@@ -14,8 +14,7 @@
 		"ctaPrimary": "Request a Quote",
 		"ctaSecondary": "View Portfolio",
 		"yearsOfExperience": "Years of Experience",
-		"projectsCompleted": "Projects Completed",
-		"brandsServed": "Brands Served"
+		"projectsCompleted": "Projects Completed"
 	},
 	"brands": {
 		"title": "Brands I've worked with",
@@ -46,13 +45,7 @@
 	},
 	"projects": {
 		"title": "Portfolio",
-		"subtitle": "Some of my most recent works",
-		"featured": "Featured Projects",
-		"otherProjects": "Other Projects",
-		"viewCode": "View Code",
-		"viewDemo": "View Demo",
-		"viewAllGithub": "View All on GitHub",
-		"noDescription": "No description"
+		"subtitle": "Projects delivered for brands that trust my work"
 	},
 	"testimonials": {
 		"title": "Testimonials",

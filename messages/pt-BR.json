@@ -14,8 +14,7 @@
 		"ctaPrimary": "Solicitar Orçamento",
 		"ctaSecondary": "Ver Portfólio",
 		"yearsOfExperience": "Anos de Experiência",
-		"projectsCompleted": "Projetos Concluídos",
-		"brandsServed": "Marcas Atendidas"
+		"projectsCompleted": "Projetos Concluídos"
 	},
 	"brands": {
 		"title": "Marcas com as quais já trabalhei",
@@ -46,13 +45,7 @@
 	},
 	"projects": {
 		"title": "Portfólio",
-		"subtitle": "Alguns dos meus trabalhos mais recentes",
-		"featured": "Projetos em Destaque",
-		"otherProjects": "Outros Projetos",
-		"viewCode": "Ver Código",
-		"viewDemo": "Ver Demo",
-		"viewAllGithub": "Ver Todos no GitHub",
-		"noDescription": "Sem descrição"
+		"subtitle": "Projetos entregues para marcas que confiam no meu trabalho"
 	},
 	"testimonials": {
 		"title": "Depoimentos",

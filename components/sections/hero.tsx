@@ -5,7 +5,6 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
-import { brandsData } from "@/lib/data/brands"
 import { gtmEvents } from "@/lib/gtm"
 
 interface HeroProps {
@@ -23,10 +22,6 @@ export function Hero({ githubStats }: HeroProps) {
 		{
 			label: t("projectsCompleted"),
 			value: githubStats ? `${githubStats.publicRepos}+` : "50+",
-		},
-		{
-			label: t("brandsServed"),
-			value: `${brandsData.length}+`,
 		},
 	]
 
@@ -185,7 +180,7 @@ export function Hero({ githubStats }: HeroProps) {
 						transition={{ duration: 0.5, delay: 0.3 }}
 						className="flex items-center justify-center"
 					>
-						<div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-1 lg:gap-12">
+						<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12">
 							{stats.map((stat, index) => (
 								<motion.div
 									key={stat.label}

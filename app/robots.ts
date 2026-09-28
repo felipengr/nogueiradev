@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: ["/api/", "/_next/"],
 			},
 		],
-		sitemap: "https://felipenogueira.dev/sitemap.xml", // MUDE PARA SEU DOMÍNIO
+		sitemap: "https://www.nogueiradev.com.br/sitemap.xml",
 	}
 }
