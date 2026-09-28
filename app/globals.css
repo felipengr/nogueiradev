@@ -130,15 +130,19 @@ html {
 	opacity: 1 !important;
 }
 
-/* Glassmorphism surface for new/premium sections */
+/* Glassmorphism surface for new/premium sections
+ * Plain rgba() instead of color-mix(): the same Lightning CSS downlevel
+ * pipeline that mangles light-dark() (see note above) also silently
+ * truncates the stylesheet when it hits color-mix() on Vercel's Linux
+ * build — never reproduced in a local Windows build, only in production. */
 .glass {
-	background: color-mix(in srgb, var(--color-card) 70%, transparent);
+	background: rgba(255, 255, 255, 0.7);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
 }
 
 .dark .glass {
-	background: color-mix(in srgb, var(--color-card) 55%, transparent);
+	background: rgba(26, 26, 26, 0.55);
 }
 
 /* Fluid display typography */
