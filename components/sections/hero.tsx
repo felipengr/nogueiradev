@@ -23,22 +23,18 @@ export function Hero({ githubStats }: HeroProps) {
 			label: t("projectsCompleted"),
 			value: githubStats ? `${githubStats.publicRepos}+` : "50+",
 		},
-		{
-			label: "Commits",
-			value: githubStats ? `${githubStats.totalCommits}+` : "1000+",
-		},
 	]
 
 	// WhatsApp link com mensagem
 	const whatsappMessage = encodeURIComponent(
-		"Olá! Vim através do seu site e gostaria de conversar sobre um projeto."
+		"Olá! Vim através do seu site e gostaria de solicitar um orçamento."
 	)
 	const whatsappLink = `https://wa.me/5511974084935?text=${whatsappMessage}`
 
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center px-4 py-20"
+			className="section-glow relative flex min-h-screen items-center justify-center px-4 py-20"
 		>
 			<div className="container mx-auto max-w-6xl">
 				<div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -48,41 +44,32 @@ export function Hero({ githubStats }: HeroProps) {
 						transition={{ duration: 0.5 }}
 						className="flex flex-col justify-center space-y-8"
 					>
-						<div className="space-y-2">
-							<motion.p
+						<div className="space-y-4">
+							<motion.div
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.1 }}
-								className="text-lg font-medium text-muted-foreground"
+								className="glass inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium text-muted-foreground"
 							>
-								{t("greeting")}
-							</motion.p>
+								<span className="h-2 w-2 rounded-full bg-secondary" />
+								{t("eyebrow")}
+							</motion.div>
 
 							<motion.h1
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.2 }}
-								className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+								className="text-display text-gradient font-bold"
 							>
-								{t("name")}
+								{t("headline")}
 							</motion.h1>
-
-							<motion.div
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.5, delay: 0.3 }}
-								className="flex items-center gap-3"
-							>
-								<div className="h-1 w-12 rounded-full bg-primary" />
-								<h2 className="text-2xl font-semibold text-primary sm:text-3xl">{t("title")}</h2>
-							</motion.div>
 						</div>
 
 						<motion.p
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: 0.4 }}
-							className="text-lg leading-relaxed text-muted-foreground"
+							className="max-w-xl text-lg leading-relaxed text-muted-foreground"
 						>
 							{t("subtitle")}
 						</motion.p>
@@ -95,18 +82,7 @@ export function Hero({ githubStats }: HeroProps) {
 						>
 							<Button
 								size="lg"
-								className="group bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer"
-								onClick={() => {
-									document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })
-								}}
-							>
-								{t("cta")}
-								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-							</Button>
-							<Button
-								size="lg"
-								variant="outline"
-								className="bg-card border-2 cursor-pointer hover:bg-muted"
+								className="group rounded-full bg-primary px-6 text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 cursor-pointer"
 								asChild
 							>
 								<Link
@@ -115,8 +91,19 @@ export function Hero({ githubStats }: HeroProps) {
 									rel="noopener noreferrer"
 									onClick={() => gtmEvents.whatsappClick("hero")}
 								>
-									{t("contact")}
+									{t("ctaPrimary")}
+									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Link>
+							</Button>
+							<Button
+								size="lg"
+								variant="outline"
+								className="glass rounded-full border-2 cursor-pointer hover:bg-muted"
+								onClick={() => {
+									document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
+								}}
+							>
+								{t("ctaSecondary")}
 							</Button>
 						</motion.div>
 
@@ -138,7 +125,7 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Github className="h-5 w-5" />
 									</Button>
@@ -161,7 +148,7 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Linkedin className="h-5 w-5" />
 									</Button>
@@ -178,7 +165,7 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Mail className="h-5 w-5" />
 									</Button>
@@ -193,7 +180,7 @@ export function Hero({ githubStats }: HeroProps) {
 						transition={{ duration: 0.5, delay: 0.3 }}
 						className="flex items-center justify-center"
 					>
-						<div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-1 lg:gap-12">
+						<div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12">
 							{stats.map((stat, index) => (
 								<motion.div
 									key={stat.label}
@@ -201,16 +188,13 @@ export function Hero({ githubStats }: HeroProps) {
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
 									whileHover={{ scale: 1.05 }}
-									className="relative rounded-2xl border-2 bg-card p-8 shadow-lg transition-all hover:shadow-xl cursor-default"
-									style={{
-										backgroundColor: "var(--color-card)",
-									}}
+									className="glass relative rounded-3xl border p-8 shadow-lg transition-all hover:shadow-xl cursor-default"
 								>
 									<div className="space-y-2">
-										<p className="text-5xl font-bold text-primary">{stat.value}</p>
+										<p className="text-gradient-accent text-5xl font-bold">{stat.value}</p>
 										<p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
 									</div>
-									<div className="absolute right-4 top-4 h-2 w-2 rounded-full bg-primary" />
+									<div className="absolute right-4 top-4 h-2 w-2 rounded-full bg-secondary" />
 								</motion.div>
 							))}
 						</div>

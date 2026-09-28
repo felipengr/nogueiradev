@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: "Felipe Nogueira | Full Stack Developer",
+		name: "Felipe Nogueira | Criação de Sites e Lojas Virtuais",
 		short_name: "Felipe Nogueira",
-		description: "Full Stack Developer especializado em React, Next.js, Node.js e VTEX IO.",
+		description:
+			"Desenvolvedor full stack especializado em sites e lojas virtuais rápidas e feitas para vender.",
 		start_url: "/",
 		display: "standalone",
 		background_color: "#ffffff",

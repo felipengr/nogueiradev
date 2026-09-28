@@ -21,7 +21,12 @@ export const experienceData = [
 			"Uno de 50 (AR)",
 			"Vexi Store (AR)",
 			"TOUS (AR)",
+			"Cartier",
 		],
+		highlights: {
+			"pt-BR": ["Construção do checkout da Cartier do zero em VTEX IO"],
+			en: ["Built Cartier's checkout from scratch on VTEX IO"],
+		},
 		current: false,
 	},
 	{
@@ -38,18 +43,21 @@ export const experienceData = [
 			en: "Strategic projects for Reserva and Baw Clothing brands. Led Baw Clothing complete redesign and Reserva's BFF (Backend for Frontend) construction on AWS. Responsible for checkout improvements, front-end enhancements, and Home/PDP redesign.",
 		},
 		technologies: ["VTEX IO", "React", "Node.js", "AWS", "TypeScript", "GraphQL"],
+		clients: ["Reserva", "Baw Clothing", "Arezzo"],
 		highlights: {
 			"pt-BR": [
 				"Relayout completo da marca Baw Clothing",
 				"Construção do BFF da Reserva (AWS)",
 				"Melhorias no checkout e experiência do usuário",
 				"Redesign de Home e Product Display Page",
+				"Projetos pontuais para a Arezzo, marca do mesmo grupo (Arezzo&Co)",
 			],
 			en: [
 				"Complete redesign of Baw Clothing brand",
 				"Reserva's BFF construction (AWS)",
 				"Checkout and UX improvements",
 				"Home and Product Display Page redesign",
+				"Ad-hoc projects for Arezzo, a sibling brand under the same group (Arezzo&Co)",
 			],
 		},
 		current: false,

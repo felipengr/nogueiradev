@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://felipenogueira.dev" // MUDE PARA SEU DOMÍNIO
+	const baseUrl = "https://www.nogueiradev.com.br"
 
 	return [
 		{
