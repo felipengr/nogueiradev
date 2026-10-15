@@ -5,6 +5,7 @@ import Image from "next/image"
 import { useLocale, useTranslations } from "next-intl"
 import { Card } from "@/components/ui/card"
 import { portfolioCases } from "@/lib/data/portfolio"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function Projects() {
 	const t = useTranslations("projects")
@@ -20,7 +21,9 @@ export function Projects() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-display-sm font-bold mb-4">{t("title")}</h2>
+					<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-4`}>
+						{t("title")}
+					</h2>
 					<p className="text-lg text-muted-foreground">{t("subtitle")}</p>
 				</motion.div>
 

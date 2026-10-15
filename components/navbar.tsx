@@ -9,6 +9,7 @@ import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { Button } from "@/components/ui/button"
 import { testimonialsData } from "@/lib/data/testimonials"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function Navbar() {
 	const t = useTranslations("nav")
@@ -85,7 +86,7 @@ export function Navbar() {
 						{/* Logo */}
 						<motion.button
 							onClick={() => scrollToSection("home")}
-							className="text-2xl font-bold cursor-pointer hover:text-primary transition-colors"
+							className={`${playfairDisplay.className} text-2xl font-bold cursor-pointer hover:text-primary transition-colors`}
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							type="button"
@@ -110,7 +111,7 @@ export function Navbar() {
 									{activeSection === item.id && (
 										<motion.div
 											layoutId="activeSection"
-											className="absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-primary to-secondary"
+											className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
 											transition={{
 												type: "spring",
 												stiffness: 380,
@@ -133,6 +134,7 @@ export function Navbar() {
 								size="icon"
 								className="md:hidden cursor-pointer"
 								onClick={() => setIsOpen(!isOpen)}
+								aria-label={isOpen ? t("closeMenu") : t("openMenu")}
 							>
 								{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
 							</Button>

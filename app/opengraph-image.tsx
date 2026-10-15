@@ -13,7 +13,7 @@ export default function Image() {
 				flexDirection: "column",
 				justifyContent: "center",
 				padding: "80px",
-				background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
+				background: "linear-gradient(135deg, #0b6e4f 0%, #86651b 100%)",
 				fontFamily: "sans-serif",
 			}}
 		>

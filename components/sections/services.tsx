@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useLocale, useTranslations } from "next-intl"
 import { Card } from "@/components/ui/card"
 import { servicesData } from "@/lib/data/services"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function Services() {
 	const t = useTranslations("services")
@@ -19,7 +20,9 @@ export function Services() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-12"
 				>
-					<h2 className="text-display-sm font-bold mb-4">{t("title")}</h2>
+					<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-4`}>
+						{t("title")}
+					</h2>
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("subtitle")}</p>
 				</motion.div>
 
@@ -34,8 +37,8 @@ export function Services() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
 							>
-								<Card className="glass h-full rounded-2xl border p-6 shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
-									<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-primary to-secondary">
+								<Card className="h-full rounded-2xl border p-6 shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+									<div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
 										<Icon className="h-6 w-6 text-white" />
 									</div>
 									<h3 className="text-xl font-semibold mb-2">{service.title[locale]}</h3>

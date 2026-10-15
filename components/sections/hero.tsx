@@ -1,10 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
+import { playfairDisplay } from "@/lib/fonts"
 import { gtmEvents } from "@/lib/gtm"
 
 interface HeroProps {
@@ -16,6 +17,7 @@ interface HeroProps {
 
 export function Hero({ githubStats }: HeroProps) {
 	const t = useTranslations("hero")
+	const shouldReduceMotion = useReducedMotion()
 
 	const stats = [
 		{ label: t("yearsOfExperience"), value: "6+" },
@@ -49,7 +51,7 @@ export function Hero({ githubStats }: HeroProps) {
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.1 }}
-								className="glass inline-flex w-fit items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium text-muted-foreground"
+								className="inline-flex w-fit items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm font-medium text-muted-foreground"
 							>
 								<span className="h-2 w-2 rounded-full bg-secondary" />
 								{t("eyebrow")}
@@ -59,7 +61,7 @@ export function Hero({ githubStats }: HeroProps) {
 								initial={{ opacity: 0, x: -20 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.2 }}
-								className="text-display text-gradient font-bold"
+								className={`${playfairDisplay.className} text-display text-gradient font-bold`}
 							>
 								{t("headline")}
 							</motion.h1>
@@ -98,7 +100,7 @@ export function Hero({ githubStats }: HeroProps) {
 							<Button
 								size="lg"
 								variant="outline"
-								className="glass rounded-full border-2 cursor-pointer hover:bg-muted"
+								className="rounded-full border-2 bg-card cursor-pointer hover:bg-muted"
 								onClick={() => {
 									document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })
 								}}
@@ -125,7 +127,8 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										aria-label="GitHub"
+										className="rounded-full border bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Github className="h-5 w-5" />
 									</Button>
@@ -148,7 +151,8 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										aria-label="LinkedIn"
+										className="rounded-full border bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Linkedin className="h-5 w-5" />
 									</Button>
@@ -165,7 +169,8 @@ export function Hero({ githubStats }: HeroProps) {
 									<Button
 										size="icon"
 										variant="ghost"
-										className="glass rounded-full border hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
+										aria-label="Email"
+										className="rounded-full border bg-card hover:bg-primary hover:text-primary-foreground cursor-pointer transition-all duration-300"
 									>
 										<Mail className="h-5 w-5" />
 									</Button>
@@ -188,10 +193,12 @@ export function Hero({ githubStats }: HeroProps) {
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
 									whileHover={{ scale: 1.05 }}
-									className="glass relative rounded-3xl border p-8 shadow-lg transition-all hover:shadow-xl cursor-default"
+									className="relative rounded-3xl border bg-card p-8 shadow-lg transition-all hover:shadow-xl cursor-default"
 								>
 									<div className="space-y-2">
-										<p className="text-gradient-accent text-5xl font-bold">{stat.value}</p>
+										<p className={`${playfairDisplay.className} text-5xl font-bold text-primary`}>
+										{stat.value}
+									</p>
 										<p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
 									</div>
 									<div className="absolute right-4 top-4 h-2 w-2 rounded-full bg-secondary" />
@@ -209,7 +216,7 @@ export function Hero({ githubStats }: HeroProps) {
 				className="absolute bottom-8 left-1/2 -translate-x-1/2"
 			>
 				<motion.div
-					animate={{ y: [0, 10, 0] }}
+					animate={shouldReduceMotion ? {} : { y: [0, 10, 0] }}
 					transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
 					className="h-8 w-5 rounded-full border-2 border-foreground p-1"
 				>

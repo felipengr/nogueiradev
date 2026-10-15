@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { brandsData } from "@/lib/data/brands"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function Brands() {
 	const t = useTranslations("brands")
@@ -16,7 +17,7 @@ export function Brands() {
 	const track = [...brands, ...brands]
 
 	return (
-		<section id="brands" className="section-glow section-glow-violet py-20">
+		<section id="brands" className="section-glow section-glow-gold py-20">
 			<div className="container mx-auto max-w-6xl px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -25,7 +26,9 @@ export function Brands() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-12"
 				>
-					<h2 className="text-display-sm font-bold mb-4">{t("title")}</h2>
+					<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-4`}>
+						{t("title")}
+					</h2>
 					<p className="text-lg text-muted-foreground">{t("subtitle")}</p>
 				</motion.div>
 			</div>

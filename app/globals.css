@@ -15,19 +15,19 @@
 	--color-card-foreground: #0a0a0a;
 	--color-popover: #ffffff;
 	--color-popover-foreground: #0a0a0a;
-	--color-primary: #3b82f6;
+	--color-primary: #0b6e4f;
 	--color-primary-foreground: #ffffff;
-	--color-secondary: #8b5cf6;
+	--color-secondary: #86651b;
 	--color-secondary-foreground: #ffffff;
 	--color-muted: #f5f5f5;
 	--color-muted-foreground: #6b7280;
-	--color-accent: #3b82f6;
+	--color-accent: #0b6e4f;
 	--color-accent-foreground: #ffffff;
-	--color-destructive: #ef4444;
+	--color-destructive: #dc2626;
 	--color-destructive-foreground: #ffffff;
 	--color-border: #e5e7eb;
 	--color-input: #e5e7eb;
-	--color-ring: #3b82f6;
+	--color-ring: #0b6e4f;
 	--radius: 0.5rem;
 }
 
@@ -38,19 +38,19 @@
 	--color-card-foreground: #f8f9fa;
 	--color-popover: #0a0a0a;
 	--color-popover-foreground: #f8f9fa;
-	--color-primary: #60a5fa;
+	--color-primary: #34d399;
 	--color-primary-foreground: #0a0a0a;
-	--color-secondary: #a78bfa;
+	--color-secondary: #d4af61;
 	--color-secondary-foreground: #0a0a0a;
 	--color-muted: #262626;
 	--color-muted-foreground: #9ca3af;
-	--color-accent: #60a5fa;
+	--color-accent: #34d399;
 	--color-accent-foreground: #0a0a0a;
-	--color-destructive: #ef4444;
-	--color-destructive-foreground: #f8f9fa;
+	--color-destructive: #f87171;
+	--color-destructive-foreground: #0a0a0a;
 	--color-border: #262626;
 	--color-input: #262626;
-	--color-ring: #60a5fa;
+	--color-ring: #34d399;
 }
 
 * {
@@ -145,17 +145,22 @@ html {
 	background: rgba(26, 26, 26, 0.55);
 }
 
-/* Fluid display typography */
+/* Fluid display sizing. The display serif (Playfair Display) itself is
+   applied per-element via playfairDisplay.className from lib/fonts.ts, not
+   through a CSS variable: Lightning CSS's @theme downlevel transform (see
+   the note above on light-dark()) also breaks var()-referencing custom
+   properties declared inside @theme, so a --font-display token silently
+   resolved to nothing. Direct className sidesteps that entirely. */
 .text-display {
 	font-size: clamp(2.75rem, 1.5rem + 6vw, 5rem);
 	line-height: 1.05;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.01em;
 }
 
 .text-display-sm {
 	font-size: clamp(2rem, 1.3rem + 3vw, 3rem);
-	line-height: 1.1;
-	letter-spacing: -0.01em;
+	line-height: 1.15;
+	letter-spacing: 0;
 }
 
 /* Radial glow accents for full-bleed sections */
@@ -170,43 +175,33 @@ html {
 	inset: 0;
 	pointer-events: none;
 	z-index: -1;
-	background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08), transparent 60%);
+	background: radial-gradient(circle at 50% 0%, rgba(11, 110, 79, 0.08), transparent 60%);
 }
 
 .dark .section-glow::before {
-	background: radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.12), transparent 60%);
+	background: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.12), transparent 60%);
 }
 
-.section-glow-violet::before {
-	background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08), transparent 60%);
+.section-glow-gold::before {
+	background: radial-gradient(circle at 50% 0%, rgba(134, 101, 27, 0.08), transparent 60%);
 }
 
-.dark .section-glow-violet::before {
-	background: radial-gradient(circle at 50% 0%, rgba(167, 139, 250, 0.12), transparent 60%);
+.dark .section-glow-gold::before {
+	background: radial-gradient(circle at 50% 0%, rgba(212, 175, 97, 0.12), transparent 60%);
 }
 
 /* Gradient text (plain hex stops — Tailwind's bg-clip-text color-mix pipeline
-   doesn't resolve our light-dark() theme tokens correctly) */
+   doesn't resolve our light-dark() theme tokens correctly). Reserved for the
+   hero headline only — the one gradient moment on the page. */
 .text-gradient {
-	background-image: linear-gradient(to bottom right, #0a0a0a, #0a0a0a, #3b82f6);
+	background-image: linear-gradient(to bottom right, #0a0a0a, #0a0a0a, #0b6e4f);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 }
 
 .dark .text-gradient {
-	background-image: linear-gradient(to bottom right, #f8f9fa, #f8f9fa, #60a5fa);
-}
-
-.text-gradient-accent {
-	background-image: linear-gradient(to bottom right, #3b82f6, #8b5cf6);
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-}
-
-.dark .text-gradient-accent {
-	background-image: linear-gradient(to bottom right, #60a5fa, #a78bfa);
+	background-image: linear-gradient(to bottom right, #f8f9fa, #f8f9fa, #34d399);
 }
 
 /* Infinite logo marquee */

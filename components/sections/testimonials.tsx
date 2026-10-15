@@ -5,6 +5,7 @@ import { Quote } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { Card } from "@/components/ui/card"
 import { testimonialsData } from "@/lib/data/testimonials"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function Testimonials() {
 	const t = useTranslations("testimonials")
@@ -25,7 +26,9 @@ export function Testimonials() {
 					transition={{ duration: 0.5 }}
 					className="text-center mb-12"
 				>
-					<h2 className="text-display-sm font-bold mb-4">{t("title")}</h2>
+					<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-4`}>
+						{t("title")}
+					</h2>
 					<p className="text-lg text-muted-foreground">{t("subtitle")}</p>
 				</motion.div>
 
@@ -38,7 +41,7 @@ export function Testimonials() {
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 						>
-							<Card className="glass h-full rounded-2xl border p-6">
+							<Card className="h-full rounded-2xl border p-6">
 								<Quote className="h-6 w-6 text-secondary" />
 								<p className="mt-4 text-muted-foreground italic leading-relaxed">
 									&ldquo;{item.quote[locale]}&rdquo;

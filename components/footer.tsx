@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { testimonialsData } from "@/lib/data/testimonials"
+import { playfairDisplay } from "@/lib/fonts"
 import { gtmEvents } from "@/lib/gtm"
 
 export function Footer() {
@@ -57,13 +58,13 @@ export function Footer() {
 	}, [])
 
 	return (
-		<footer className="glass border-t">
+		<footer className="bg-card border-t">
 			<div className="w-full max-w-7xl mx-auto px-4 py-12">
 				<div className="grid gap-8 md:grid-cols-4">
 					{/* Brand */}
 					<div className="space-y-4">
 						<motion.h3
-							className="text-2xl font-bold cursor-pointer hover:text-primary transition-colors"
+							className={`${playfairDisplay.className} text-2xl font-bold cursor-pointer hover:text-primary transition-colors`}
 							onClick={scrollToTop}
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
@@ -159,6 +160,7 @@ export function Footer() {
 						size="icon"
 						variant="outline"
 						onClick={scrollToTop}
+						aria-label={t("backToTop")}
 						className="rounded-full cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
 					>
 						<ArrowUp className="h-4 w-4" />

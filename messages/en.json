@@ -5,7 +5,9 @@
 		"portfolio": "Portfolio",
 		"about": "About",
 		"testimonials": "Testimonials",
-		"contact": "Contact"
+		"contact": "Contact",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu"
 	},
 	"hero": {
 		"eyebrow": "Professional Web Development",
@@ -57,6 +59,7 @@
 		"social": "Social Media",
 		"contact": "Contact",
 		"rights": "All rights reserved.",
+		"backToTop": "Back to top",
 		"nav": {
 			"home": "Home",
 			"services": "Services",

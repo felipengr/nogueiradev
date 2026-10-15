@@ -1,14 +1,12 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/gtm"
 import { StructuredData } from "@/components/structured-data"
 import { ThemeProvider } from "@/components/theme-provider"
+import { inter } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import "../globals.css"
-
-const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export async function generateMetadata({
 	params,

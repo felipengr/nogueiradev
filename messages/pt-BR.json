@@ -5,7 +5,9 @@
 		"portfolio": "Portfólio",
 		"about": "Sobre mim",
 		"testimonials": "Depoimentos",
-		"contact": "Contato"
+		"contact": "Contato",
+		"openMenu": "Abrir menu",
+		"closeMenu": "Fechar menu"
 	},
 	"hero": {
 		"eyebrow": "Desenvolvimento Web Profissional",
@@ -57,6 +59,7 @@
 		"social": "Redes Sociais",
 		"contact": "Contato",
 		"rights": "Todos os direitos reservados.",
+		"backToTop": "Voltar ao topo",
 		"nav": {
 			"home": "Início",
 			"services": "Serviços",

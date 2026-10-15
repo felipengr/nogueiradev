@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { playfairDisplay } from "@/lib/fonts"
 import { gtmEvents } from "@/lib/gtm"
 
 declare global {
@@ -187,7 +188,9 @@ export function Contact() {
 						transition={{ duration: 0.5 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl font-bold mb-4">{t("title")}</h2>
+						<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-4`}>
+							{t("title")}
+						</h2>
 						<p className="text-lg text-muted-foreground">{t("subtitle")}</p>
 					</motion.div>
 

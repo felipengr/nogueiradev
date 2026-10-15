@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl"
 import { Badge } from "@/components/ui/badge"
 import { experienceData } from "@/lib/data/experience"
 import { profileData } from "@/lib/data/profile"
+import { playfairDisplay } from "@/lib/fonts"
 
 export function About() {
 	const t = useTranslations("about")
@@ -19,7 +20,9 @@ export function About() {
 					viewport={{ once: true }}
 					transition={{ duration: 0.5 }}
 				>
-					<h2 className="text-display-sm font-bold mb-6">{t("title")}</h2>
+					<h2 className={`${playfairDisplay.className} text-display-sm font-bold mb-6`}>
+						{t("title")}
+					</h2>
 					<p className="text-lg text-muted-foreground leading-relaxed mb-10">{t("bio")}</p>
 				</motion.div>
 
